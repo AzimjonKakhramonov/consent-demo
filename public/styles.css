@@ -1,0 +1,30 @@
+:root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #182f36; background: #f3f5ef; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+main { max-width: 780px; margin: auto; padding: 36px 24px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+.brand { font-size: 13px; font-weight: 800; letter-spacing: .12em; }
+.badge { background: #dce9dc; padding: 8px 12px; border-radius: 24px; font-size: 12px; }
+h1 { font-size: clamp(36px, 7vw, 58px); letter-spacing: -.04em; line-height: 1.05; margin: 0 0 22px; }
+h2 { font-size: 21px; margin: 0 0 20px; }
+p, li { line-height: 1.6; }
+.intro { color: #466068; font-size: 18px; max-width: 620px; margin-bottom: 30px; }
+.card { background: #fff; border: 1px solid #d8e1da; border-radius: 20px; padding: 28px; margin: 20px 0; }
+ol { padding-left: 24px; }
+li { padding-left: 6px; margin-bottom: 15px; }
+.note { background: #f3f5ef; padding: 14px 16px; border-radius: 10px; font-size: 14px; }
+.consent { display: flex; gap: 12px; align-items: flex-start; margin: 24px 0; line-height: 1.5; cursor: pointer; }
+input { width: 22px; height: 22px; flex-shrink: 0; accent-color: #235e48; margin: 2px 0 0; }
+button { border: 0; border-radius: 10px; background: #235e48; color: #fff; font: inherit; font-weight: 650; padding: 15px 20px; cursor: pointer; line-height: 1.4; }
+button:hover:not(:disabled) { background: #174734; }
+button:disabled { background: #e1e7e1; color: #57665e; cursor: not-allowed; }
+button:focus-visible, input:focus-visible { outline: 3px solid #99641a; outline-offset: 4px; }
+.secondary { background: transparent; color: #235e48; border: 1px solid #235e48; }
+.secondary:hover:not(:disabled) { background: #dce9dc; }
+.hint, footer { font-size: 13px; color: #53656a; }
+video, #photo { display: block; width: 100%; max-height: 420px; object-fit: contain; background: #152a2f; border-radius: 12px; }
+.coordinates { font-variant-numeric: tabular-nums; white-space: pre-line; overflow-wrap: anywhere; }
+#status { padding: 12px 0; font-weight: 550; }
+footer { border-top: 1px solid #d8e1da; padding-top: 20px; }
+@media (max-width: 480px) { main { padding: 24px 16px; } .card { padding: 20px; } button { width: 100%; } header { margin-bottom: 32px; } }

@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: consent-demo
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+# The initial deployment works without Telegram credentials (preview only).
+# Add TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in the service's Environment tab
+# to enable explicit sends. Never put their values in this file or in Git.

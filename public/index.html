@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Чек-ин с вашего согласия</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><span class="brand">CHECK-IN / DEMO</span><span class="badge">Только с вашего согласия</span></header>
+    <h1>Вы решаете,<br>чем поделиться.</h1>
+    <p class="intro">Один снимок и ваша геопозиция. Сначала посмотрите результат — и только затем решите, отправлять ли его.</p>
+    <section aria-labelledby="about-title" class="card">
+      <h2 id="about-title">Что произойдёт</h2>
+      <ol>
+        <li><strong>Разрешите доступ.</strong> По вашей кнопке страница запросит камеру и геолокацию штатными средствами браузера. Микрофон не используется.</li>
+        <li><strong>Сделайте фото и проверьте.</strong> Вы увидите снимок, широту, долготу и точность. До отправки они остаются в этой вкладке.</li>
+        <li><strong>Отправьте, если согласны.</strong> Отдельная кнопка передаст фото и координаты через сервер в Telegram-чат владельца демо.</li>
+      </ol>
+      <p class="note">Это демо для добровольной проверки на себе, не проверка личности. При отправке фото и координаты пройдут через сервер хостинга в Telegram-чат владельца. После отправки данные останутся в Telegram; очистка страницы не удаляет сообщение.</p>
+      <p>Нажимая кнопку ниже, вы соглашаетесь включить камеру и определить вашу геопозицию для предпросмотра. Отправку в Telegram вы подтвердите отдельно.</p>
+      <button id="start">Включить камеру и определить геопозицию</button>
+      <p class="hint">Можно отказаться в запросе браузера или отменить подготовку. Если разрешение уже сохранено, браузер может не спрашивать повторно.</p>
+    </section>
+    <section id="capture" class="card" hidden aria-labelledby="capture-title">
+      <h2 id="capture-title">Подготовьте снимок</h2>
+      <video id="video" autoplay playsinline muted aria-label="Предпросмотр камеры"></video>
+      <p>Камера включена только для предпросмотра. Нажмите кнопку, когда будете готовы.</p>
+      <button id="snap" disabled>Сделать фото</button>
+    </section>
+    <section id="preview" class="card" hidden aria-labelledby="preview-title">
+      <h2 id="preview-title">Проверьте перед отправкой</h2>
+      <img id="photo" alt="Ваш снимок для отправки в Telegram">
+      <p id="coordinates" class="coordinates"></p>
+      <p>Получатель: Telegram-чат владельца демо, заданный им на сервере. Будут отправлены только это фото и эти координаты с точностью.</p>
+      <button id="send" disabled>Отправить фото и координаты в Telegram</button>
+    </section>
+    <button id="reset" class="secondary" hidden>Отменить и очистить</button>
+    <p id="status" role="status" aria-live="polite">Камера выключена. Геопозиция не запрашивалась. Ничего не отправлено.</p>
+    <noscript>Для демо нужен JavaScript. Сейчас камера и геолокация не используются.</noscript>
+    <footer>Без автоматической съёмки · Без фонового отслеживания</footer>
+  </main>
+</body>
+</html>
